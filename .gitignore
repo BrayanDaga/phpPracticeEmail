@@ -1,0 +1,89 @@
+# === General ===
+*.log
+*.cache
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# === Composer ===
+/vendor/
+/composer.lock
+
+# === Node/npm (si usas frontend con npm) ===
+/node_modules/
+package-lock.json
+npm-debug.log
+yarn.lock
+
+# === PHPStorm / JetBrains IDEs ===
+.idea/
+
+# === Eclipse ===
+.settings/
+.project
+.buildpath
+
+# === NetBeans ===
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# === VS Code ===
+.vscode/
+
+# === PHPUnit ===
+/phpunit.xml
+/phpunit.xml.dist
+/test-results/
+/coverage/
+
+# === Symfony / Laravel / Frameworks ===
+/.env
+/.env.*
+/.env.local.php
+/storage/
+/bootstrap/cache/
+
+# === Logs y cachés de frameworks ===
+/storage/logs/
+/storage/framework/cache/
+/storage/framework/sessions/
+/storage/framework/views/
+/storage/framework/testing/
+
+# === Otros ===
+*.sql
+*.sqlite
+*.sqlite3
+*.tgz
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+
+# === Sistemas de control ===
+*.lock
+
+# === Archivos temporales de usuario ===
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# === Docker (si aplica) ===
+.docker/
+docker-compose.override.yml
+
+# === Coverage ===
+/coverage/
+.clover
+.phpunit.result.cache
