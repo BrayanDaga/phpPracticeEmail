@@ -6,8 +6,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 // Load Composer's autoloader (created by composer, not included with PHPMailer)
 require 'vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 
 class Controller
 {
@@ -48,16 +54,16 @@ class Controller
 
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
             $mail->isSMTP();
-            $mail->Host = 'sandbox.smtp.mailtrap.io';
+            $mail->Host =  $_ENV['MAIL_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Port = 2525;
-            $mail->Username = '5683a3d101750e';
-            $mail->Password = 'e5e04fc973d14f';
+            $mail->Port = $_ENV['MAIL_PORT'];
+            $mail->Username = $_ENV['MAIL_USERNAME'];
+            $mail->Password = $_ENV['MAIL_PASSWORD'];
+            $mail->setFrom($_ENV['MAIL_FROM'], 'Mailer');
+            $mail->addAddress($_ENV['MAIL_TO']);
 
             // Recipients
-            $mail->setFrom($this->email, $this->name);            // $mail->addAddress('joe@example.net', 'Joe User'); //Add a recipient
-            $mail->addAddress('intertelecenter@yahoo.com'); // Name is optional
-            $mail->addReplyTo('intertelecenter@yahoo.com', 'Information');
+            $mail->addReplyTo($_ENV['MAIL_TO'], 'Information');
             // $mail->addCC('cc@example.com');
             // /$mail->addBCC('bcc@example.com');
 
