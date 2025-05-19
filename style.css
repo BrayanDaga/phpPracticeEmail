@@ -13,6 +13,15 @@ body {
 	color:red;
 }
 
+.success{
+	padding: 6px;
+	max-width: 300px;
+	background-color: #5af362;
+	border-radius: 5px;
+	margin: 20px auto;
+	text-align: center;
+}
+
 form {
 	max-width: 400px;
 	margin: auto;
